@@ -1,61 +1,75 @@
 # ShadowsocksX-NG
 
-Current version is 1.0 Beta
+Current version is 1.5
 
-[![Build Status](https://travis-ci.org/qiuyuzhou/ShadowsocksX-NG.svg?branch=develop)](https://travis-ci.org/qiuyuzhou/ShadowsocksX-NG)
+[![Build Status](https://travis-ci.org/shadowsocks/ShadowsocksX-NG.svg?branch=develop)](https://travis-ci.org/shadowsocks/ShadowsocksX-NG)
 
 Next Generation of [ShadowsocksX](https://github.com/shadowsocks/shadowsocks-iOS)
 
-## Why Another Implement
+## Why?
 
-It's hard to maintaine the original implement. There are too many unused code in it. 
-It also embed ss-local source. It's crazy to maitaine depandences of ss-local. 
-So it's hard to update ss-local version.
+It's hard to maintain the original implementation as there is too much unused code in it.
+It also embeds the ss-local source. It's crazy to maintain dependencies of ss-local.
+So it's hard to update the ss-local version.
 
-Now I just copy the ss-local from home brew. Run ss-local executable as a Launch Agent in background. 
-Serve pac js file as a file url. So there are only some souce codes related to GUI left. 
-Then I rewrite the gui code by swift.
+Now I just copied the ss-local from homebrew. Run ss-local executable as a Launch Agent in the background.
+Serve PAC js file as a file URL. So there is only some source code related to GUI left.
+Then I will rewrite the GUI code in Swift.
 
 ## Requirements
 
 ### Running
 
-- Mac OS X 10.10 +
+- Mac OS X 10.11 +
 
 ### Building
 
-- XCode 7.3+
-- cocoapod 1.0.1+
+- XCode 8.3+
+- cocoapod 1.2+
 
-## Fetures
+## Download
 
-- Use ss-local from shadowsocks-libev 2.4.6
-- Update PAC by download GFW List from github.
+From [here](https://github.com/shadowsocks/ShadowsocksX-NG/releases/)
+
+## Features
+
+- Use ss-local from shadowsocks-libev 3.0.5
+- Could Update PAC by download GFW List from GitHub.
 - Show QRCode for current server profile.
 - Scan QRCode from screen.
 - Auto launch at login.
 - User rules for PAC.
-- Support OTA
-- An advance preferences panel to configure:
+- Support for [AEAD Ciphers](https://shadowsocks.org/en/spec/AEAD-Ciphers.html)
+- HTTP Proxy by [privoxy](http://www.privoxy.org/)
+- Over [kcptun](https://github.com/xtaci/kcptun). Version 20170322
+- Export/Import configure file.
+- An advanced preferences panel to configure:
 	- Local socks5 listen address.
 	- Local socks5 listen port.
 	- Local socks5 timeout.
 	- If enable UDP relay.
-	- GFW List url.
+	- GFW List URL.
+- Manual specify network service profiles which would be configure the proxy.
+- Could reorder shadowsocks profiles by drag & drop in servers preferences panel.
+- Configurable global shortcuts for toggle running and switch proxy mode.
 
-## Diferences with orignal ShadowsocksX
+## Different from orignal ShadowsocksX
 
-Run ss-local as backgroud service through launchd, not in app process.
-So after you quit the app, the ss-local maybe is still running. 
+Run ss-local as a background service through launchd, not as an in-app process.
+So after you quit the app, the ss-local maybe be still running.
 
-Add a manual mode which won't configure the system proxy settings. 
+Added a manual mode which won't configure the system proxy settings.
 Then you could configure your apps to use socks5 proxy manual.
 
-## TODO List
+## Contributing 
 
-- Embed the http proxy server [privoxy](http://www.privoxy.org/).
+[![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ShadowsocksX-NG/Lobby)
+
+Contributions must be available on a separately named branch based on the latest version of the main branch develop.
+
+ref: [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/)
 
 ## License
 
-The project is released under the terms of GPLv3.
+The project is released under the terms of the GPLv3.
 
